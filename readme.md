@@ -18,7 +18,7 @@ This repository is designed to build a database for machine learning training th
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/ShaoxunLiu/FoldVec.git](https://github.com/ShaoxunLiu/FoldVec.git)
+git clone https://github.com/ShaoxunLiu/FoldVec.git
 cd FoldVec
 ```
 
@@ -41,7 +41,7 @@ conda activate esm_env
 This tool is optimized for large datasets. You can download the Mammalia protein entries from UniProt (~7M entries) using the command below. This creates the `uniprot_data.tsv` input file required for processing.
 
 ```bash
-wget -O uniprot_data.tsv "[https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cgene_names%2Csequence%2Cprotein_name%2Cgo%2Cxref_alphafolddb%2Ccc_subcellular_location%2Ckeyword%2Ccc_interaction&format=tsv&query=%28%28taxonomy_id%3A40674%29%29](https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cgene_names%2Csequence%2Cprotein_name%2Cgo%2Cxref_alphafolddb%2Ccc_subcellular_location%2Ckeyword%2Ccc_interaction&format=tsv&query=%28%28taxonomy_id%3A40674%29%29)"
+wget -O uniprot_data.tsv "https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cgene_names%2Csequence%2Cprotein_name%2Cgo%2Cxref_alphafolddb%2Ccc_subcellular_location%2Ckeyword%2Ccc_interaction&format=tsv&query=%28%28taxonomy_id%3A40674%29%29"
 ```
 
 ### Input Data Schema
@@ -70,11 +70,11 @@ To generate the 512-dimension structure embeddings from the downloaded TSV, run 
 
 ```bash
 # Make sure the script is executable
-chmod +x AFvectorize.sh
+chmod +x generate_embeddings.sh
 
 # Run the pipeline
 # This reads 'uniprot_data.tsv' and outputs 'embeddings_table.csv'
-bash AFvectorize.sh uniprot_data.tsv embeddings_table.csv
+bash generate_embeddings.sh uniprot_data.tsv embeddings_table.csv
 ```
 
 **Output:**
