@@ -1,0 +1,23 @@
+name: esm_env
+channels:
+  - pytorch
+  - nvidia
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8   # Installs a compatible CUDA toolkit inside the env
+  - pyg                 # Installs torch-geometric
+  - pytorch-scatter     # Pre-compiled binary
+  - pytorch-sparse      # Pre-compiled binary
+  - pytorch-cluster
+  - jq                  # Added: JSON processor for AlphaFold scripts
+  - pip
+  - pip:
+    - fair-esm
+    - biotite           # Required for PDB parsing in ESM-IF
+    - "numpy<2"         # CRITICAL: Force Numpy 1.x to prevent binary crashes
