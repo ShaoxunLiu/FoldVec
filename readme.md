@@ -36,6 +36,8 @@ We strongly recommend using **Conda** to manage the dependencies (PyTorch, PyG, 
 ```bash
 # Create the environment
 conda env create -f environment.yml
+# For CPU-only environment
+conda env create -f environment_cpu.yml
 
 # Activate it
 conda activate esm_env
