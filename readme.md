@@ -51,6 +51,13 @@ This tool is optimized for large datasets. You can download the Mammalia protein
 wget -O uniprot_data.tsv "https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cgene_names%2Csequence%2Cprotein_name%2Cgo%2Cxref_alphafolddb%2Ccc_subcellular_location%2Ckeyword%2Ccc_interaction&format=tsv&query=%28%28taxonomy_id%3A40674%29%29"
 ```
 
+For a smaller Toy example, you can instead download the Mammalia disease-related protein entries from UniProt (~5k entries) using the command below. 
+
+```bash
+wget -O uniprot_data.tsv "https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cgene_names%2Csequence%2Cprotein_name%2Cgo%2Cxref_alphafolddb%2Ccc_subcellular_location%2Ckeyword%2Ccc_interaction&format=tsv&query=%28%28taxonomy_id%3A40674%29%29+AND+%28proteins_with%3A20%29"
+```
+
+
 ### Input Data Schema
 
 The downloaded `uniprot_data.tsv` contains 9 fields:
