@@ -87,7 +87,7 @@ Downloads PDBs from AlphaFold and encodes the 3D structure using ESM-IF1.
 * **Output Dimension:** 512
 
 ```bash
-./generate_embeddings.sh -i uniprot_data.tsv -o struct_results.csv --mode structure
+bash generate_embeddings.sh -i uniprot_data.tsv -o struct_results.csv --mode structure
 ```
 
 ### 2. Sequence Mode
@@ -97,7 +97,7 @@ Reads sequences directly from the TSV file and encodes them using ESM-2 (8M). Th
 * **Output Dimension:** 320
 
 ```bash
-./generate_embeddings.sh -i uniprot_data.tsv -o seq_results.csv --mode sequence
+bash generate_embeddings.sh -i uniprot_data.tsv -o seq_results.csv --mode sequence
 ```
 
 ### Single File Processing (Manual)
