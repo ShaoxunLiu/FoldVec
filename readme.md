@@ -6,7 +6,7 @@ This repository is designed to build a database for machine learning training th
 
 1.  **Structure Mode (Default):** Uses **ESM-IF1** to encode 3D backbone coordinates from AlphaFold predictions.
 2.  **Sequence Mode:** Uses **ESM-2** to encode amino acid sequences directly.
-3.  **Di-Amino Acid Mode:** Uses 2-amino acid frequencies and structural propaties to encode AlphaFold predictions.
+3.  **Psi-Phi Angle Mode:** Uses Psi-Phi angles as structural property to encode AlphaFold predictions.
 
 
 ## 🚀 Features
@@ -105,13 +105,13 @@ bash generate_embeddings.sh -i uniprot_data.tsv -o seq_results.csv --mode sequen
 ```
 
 ### 2. Sequence Mode
-Downloads PDBs from AlphaFold and encode structures using di-amino acid residue frequency (significantly faster than ESM-IF)
+Downloads PDBs from AlphaFold and encode structures using psi-phi angles (significantly faster than ESM-IF)
 
-* **Flag:** `--mode 2resi`
-* **Output Dimension:** 405
+* **Flag:** `--mode angles`
+* **Output Dimension:** 400
 
 ```bash
-bash generate_embeddings.sh -i uniprot_data.tsv -o seq_results.csv --mode 2resi
+bash generate_embeddings.sh -i uniprot_data.tsv -o seq_results.csv --mode angles
 ```
 
 ### Single File Processing (Manual)
